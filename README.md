@@ -16,9 +16,9 @@ Overall, the Pokedex app is a useful tool for Pokemon enthusiasts who want to ex
 
 ## Screenshots
 
-![Starting Screen](img/starting-screen.png)
-![Main Gameplay](img/main-gameplay.png)
-![A Win](img/player-win.png)
+![Starting Screen](/public/images/)
+![Main Gameplay](/public/images/))
+![A Win](/public/images/))
 
 ## Technologies Used
 
@@ -32,7 +32,7 @@ Overall, the Pokedex app is a useful tool for Pokemon enthusiasts who want to ex
 
 ## Play the Game
 
-The game has not been deployed. It requires two players. Remember, blue always goes first. When the game concludes, an overlay appears on screen indicating the game is over. To reset, click close on the overlay and press reset.
+The game has not been deployed as of yet.
 
 ## Future Work
 
