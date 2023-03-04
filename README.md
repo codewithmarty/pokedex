@@ -16,14 +16,15 @@ Overall, the Pokedex app is a useful tool for Pokemon enthusiasts who want to ex
 
 ## Screenshots
 
-![Starting Screen](/public/images/)
-![Main Gameplay](/public/images/))
-![A Win](/public/images/))
+![Pokedex](/public/images/pokedex)
+![Your Team](/public/images/team))
+![The Wild](/public/images/wild))
 
 ## Technologies Used
 
 - Express.js
 - Node.js
+- Google Oauth
 - PokeAPI
 - EJS
 - CSS
