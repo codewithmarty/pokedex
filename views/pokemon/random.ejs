@@ -1,0 +1,30 @@
+<%- include('../partials/header') %>
+    <div class="index-container">
+        <div class="pokedex-container">
+            <a href="/pokedex/<%= pokemon.data.game_indices[3].game_index %>">
+                <div class="card">
+                    <h2 class="name">#<%= pokemon.data.game_indices[3].game_index %> <%= pokemon.data.name.charAt(0).toUpperCase() + pokemon.data.name.slice(1) %></h2>
+                    <img class="image" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<%= pokemon.data.game_indices[3].game_index %>.png" alt="Picture of Pokemon">
+                    <form action="/pokemon %>" method="POST">
+                        <input name="name" type="hidden" value="<%= pokemon.data.name %>"/>
+                        <input name="num" type="hidden" value="<%= pokemon.data.game_indices[3].game_index %>" />
+                        <input name="height" type="hidden" value="<%= pokemon.data.height %>"/>
+                        <input name="weight" type="hidden" value="<%= pokemon.data.weight %>"/>
+                        <input name="img" type="hidden" value="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<%= pokemon.data.game_indices[3].game_index %>.png"/>
+                        <input name="abilities" type="hidden" value="<%= pokemon.data.abilities.map(elem => elem.ability.name).join(',') %>" />
+                        <input name="moves" type="hidden" value="<%= pokemon.data.moves.map(elem => elem.move.name).join(',') %>" />
+                        <input name="hp" type="hidden" value="<%= pokemon.data.stats[0].base_stat %>" />
+                        <input name="attack" type="hidden" value="<%= pokemon.data.stats[1].base_stat %>" />
+                        <input name="defense" type="hidden" value="<%= pokemon.data.stats[2].base_stat %>" />
+                        <input name="specialattack" type="hidden" value="<%= pokemon.data.stats[3].base_stat %>" />
+                        <input name="specialdefense" type="hidden" value="<%= pokemon.data.stats[4].base_stat %>" />
+                        <input name="speed" type="hidden" value="<%= pokemon.data.stats[5].base_stat %>" />
+                        <input name="user" type="hidden" value="<%= user.id %>" />
+                        <input name="isStarter" type="hidden" value=false />
+                        <button>Catch</button>
+                    </form>
+                </div>
+            </a>
+        </div>
+    </div>
+<%- include('../partials/footer') %>

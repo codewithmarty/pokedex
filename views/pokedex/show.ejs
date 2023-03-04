@@ -1,0 +1,60 @@
+<%- include('../partials/header') %>
+    <div class="show-container">
+        <header>
+            <h1 class="name"><%= pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1) %></h1>
+        </header>
+        <main>
+        <section class="image-section">
+            <img class="image" src="<%= pokemon['sprites']['other']['official-artwork']['front_default'] %>" alt="Picture of Pokemon">
+        </section>
+        <section class="info-section">
+            <h2 class="section-title">Overview</h2>
+            <ul>
+            <li><span>Type: </span><%= pokemon.types.map(elem => elem.type.name).join(', ') %></li>
+            <li><span>Height: </span><%= pokemon.height %></li>
+            <li><span>Weight: </span><%= pokemon.weight %></li>
+            <li><span>Abilities: </span><%= pokemon.abilities.map(elem => elem.ability.name).join(', ') %></li>
+            </ul>
+            <h2 class="section-title">Stats</h2>
+            <table>
+            <tr>
+                <th>HP</th>
+                <td><%= pokemon.stats[0].base_stat %></td>
+            </tr>
+            <tr>
+                <th>Attack</th>
+                <td><%= pokemon.stats[1].base_stat %></td>
+            </tr>
+            <tr>
+                <th>Defense</th>
+                <td><%= pokemon.stats[2].base_stat %></td>
+            </tr>
+            <tr>
+                <th>Special Attack</th>
+                <td><%= pokemon.stats[3].base_stat %></td>
+            </tr>
+            <tr>
+                <th>Special Defense</th>
+                <td><%= pokemon.stats[4].base_stat %></td>
+            </tr>
+            <tr>
+                <th>Speed</th>
+                <td><%= pokemon.stats[5].base_stat %></td>
+            </tr>
+            </table>
+            <h2 class="section-title">Sprites</h2>
+            <% for (let key in pokemon.sprites) { %>
+                <% if (typeof pokemon.sprites[key] == 'string') { %>
+                    <img class="sprite" src="<%= pokemon.sprites[key] %>"/>
+                <% } %>
+            <% } %>
+            <h2 class="section-title">Moves</h2>
+            <ul class="move-list">
+                <% pokemon.moves.forEach(elem => { %>
+                    <li><%= elem.move.name %></li>
+                <% }) %>
+            </ul>
+        </section>
+        </main>
+    </div>
+<%- include('../partials/footer') %>

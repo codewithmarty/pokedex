@@ -1,0 +1,41 @@
+<%- include('../partials/header') %>
+    <div class="index-container">
+        <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/2560px-International_Pok%C3%A9mon_logo.svg.png" />
+        <div class="pokedex-container">
+            <% yourPokemon.forEach( (pokemon, index) => { %>
+                <a href="/pokedex/<%= pokemon.num %>">
+                    <div class="card">
+                        <h2 class="name">#<%= pokemon.num %> <%= pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1) %></h2>
+                        <img class="image" src="<%= pokemon.img %>" alt="Picture of Pokemon">
+                        <form action="/pokemon/<%= pokemon.id %>?_method=DELETE" method="POST"><button>Release</button></form>
+                    </div>
+                </a>
+            <% }) %>
+            <% if (!yourPokemon.length) { %>
+                <% starters.forEach( (pokemon, index) => { %>
+                    <form action="/pokemon %>" method="POST">
+                        <div class="card">
+                            <input name="name" type="hidden" value="<%= pokemon.data.name %>"/>
+                            <input name="height" type="hidden" value="<%= pokemon.data.height %>"/>
+                            <input name="weight" type="hidden" value="<%= pokemon.data.weight %>"/>
+                            <input name="img" type="hidden" value="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<%= pokemon.data.game_indices[3].game_index %>.png"/>
+                            <input name="abilities" type="hidden" value="<%= pokemon.data.abilities.map(elem => elem.ability.name).join(',') %>" />
+                            <input name="moves" type="hidden" value="<%= pokemon.data.moves.map(elem => elem.move.name).join(',') %>" />
+                            <input name="hp" type="hidden" value="<%= pokemon.data.stats[0].base_stat %>" />
+                            <input name="attack" type="hidden" value="<%= pokemon.data.stats[1].base_stat %>" />
+                            <input name="defense" type="hidden" value="<%= pokemon.data.stats[2].base_stat %>" />
+                            <input name="specialattack" type="hidden" value="<%= pokemon.data.stats[3].base_stat %>" />
+                            <input name="specialdefense" type="hidden" value="<%= pokemon.data.stats[4].base_stat %>" />
+                            <input name="speed" type="hidden" value="<%= pokemon.data.stats[5].base_stat %>" />
+                            <input name="user" type="hidden" value="<%= user.id %>" />
+                            <input name="isStarter" type="hidden" value=true />
+                            <h2 class="name">#<%= index+1 %> <%= pokemon.data.name.charAt(0).toUpperCase() + pokemon.data.name.slice(1) %></h2>
+                            <img class="image" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<%= pokemon.data.game_indices[3].game_index %>.png" alt="Picture of Pokemon">
+                            <button>Equip</button>
+                        </div>
+                    </form>
+                <% }) %>
+            <% } %>
+        </div>
+    </div>
+<%- include('../partials/footer') %>

@@ -1,0 +1,15 @@
+<%- include('../partials/header') %>
+    <div class="index-container">
+        <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/2560px-International_Pok%C3%A9mon_logo.svg.png" />
+        <div class="pokedex-container">
+            <% pokedex.forEach( (pokemon, index) => { %>
+                <a href="/pokedex/<%= index+1 %>">
+                    <div class="card">
+                        <h2 class="name">#<%= index+1 %> <%= pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1) %></h2>
+                        <img class="image" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<%= index+1 %>.png" alt="Picture of Pokemon">
+                    </div>
+                </a>
+            <% }) %>
+        </div>
+    </div>
+<%- include('../partials/footer') %>
