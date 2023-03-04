@@ -16,9 +16,9 @@ Overall, the Pokedex app is a useful tool for Pokemon enthusiasts who want to ex
 
 ## Screenshots
 
-![Pokedex](./public/images/pokedex)
-![Your Team](./public/images/team))
-![The Wild](./public/images/wild))
+![Pokedex](public/images/pokedex.png)
+![Your Team](public/images/team.png))
+![The Wild](public/images/wild.png))
 
 ## Technologies Used
 
