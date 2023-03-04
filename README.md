@@ -33,7 +33,7 @@ Overall, the Pokedex app is a useful tool for Pokemon enthusiasts who want to ex
 
 ## Play the Game
 
-The game has not been deployed as of yet.
+The game is available and ready to play at [here](https://pokemon-adventures.up.railway.app/pokedex)
 
 ## Future Work
 
