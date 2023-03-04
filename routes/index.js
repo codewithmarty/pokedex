@@ -4,7 +4,10 @@ const passport = require('passport')
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.redirect('/pokedex')
+  res.render('index', { 
+    title: 'Pokedex',
+    user: req.user,
+  });
 });
 
 router.get('/about', function(req, res, next) {
