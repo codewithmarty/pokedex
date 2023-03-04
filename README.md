@@ -36,6 +36,7 @@ The game has not been deployed as of yet.
 
 ## Future Work
 
-- **A working CPU**: The original plan for the game included the option of facing an AI (CPU). However, due to time constraints, this was not possible. 
-- **SocketIO**: This current version of Connect Four implements two player gameplay so long as the two people are sharing a single machine. The hope is to one day expand this game to allow for remote gameplay. One day, two people from a distance away will be able to play my version of Connect Four.
-- **UI Enhancement**: This is a given but the hope is to include animations as the current implementation of the game does not have chips falling into place. I'd also like to further develop the styling of my application. It is a functional game, but these UI enhancements will further the experience of those playing my version of the classic connect four.
+- **Add Leveling Up and Battle Feature**: Pokemon have a myriad of information stored including the level and some battle attacks. It's not much of a stretch to include a battle feature where pokemon appear in the wild and pokemon in your team can level up.
+- **Gym Battles**: Adding gym battles where not only users can earn badges, but they can also qualify for the indigo plateau and train their team.
+- **Evolution**: This one's a bit tricky as the current PokeAPI does not contain information regarding when a pokemon evolves and their next evolved form. I would have to include this information myself and add some logic to get evolutions underway.
+- **SocketIO**: Allowing battles across different users would be a nice long-term goal to achieve.
